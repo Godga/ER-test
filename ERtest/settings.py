@@ -24,6 +24,7 @@ PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH)
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 MEDIA_URL = '/media/'
+DATABASE_PATH = os.path.join(PROJECT_PATH, 'ER_test_app.db')
 STATIC_URL = '/static/'
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 
@@ -84,16 +85,25 @@ WSGI_APPLICATION = 'ERtest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# база данных для хостинга pythonanywhere
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ertest',
-        'USER': 'root',
-        'PASSWORD': '13579',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': DATABASE_PATH,
     }
 }
+
+# рабочая база данных
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'ertest',
+#        'USER': 'root',
+#        'PASSWORD': '13579',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#    }
+#}
 
 
 # Password validation
