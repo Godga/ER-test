@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<link href="{% static 'css/libraries/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+		<link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+		<link href="{% static 'css/logreg.css' %}" rel="stylesheet" media="screen">
+		<title>
+			ДБ - Вход
+		</title>
+	</head>
+	<body class="log_page">
+		<div class="log_wrap">
+			<div class="log_menu">
+				<nav>
+					<a href="/login/" class="active">Вход</a>
+					<a href="/register/">Регистрация</a>
+				</nav>
+			</div>
+			<div class="log_body">
+				<div class="pad">
+					{% if not user.is_authenticated %}
+					<form id="login_form" method="post" action="/login/">
+						{% csrf_token %}
+						<ul class="form_list">
+							<li class="form-group">
+								<label class="text-muted">Имя пользователя</label>
+								<input class="form-control" required="required" autofocus="autofocus" type="text" name="username" />
+							</li>
+							<li class="form-group">
+								<label class="text-muted">Пароль</label>
+								<input class="form-control" type="password" required="required" autofocus="autofocus" name="password" value="" />
+							</li>
+							<li class="form-group">
+								<div class="result">{{ result }}</div>
+							</li>
+						<input class="btn btn-primary log_submit" type="submit" value="Войти" />
+					</form>
+					{% else %}
+						<strong>Ты уже вошел, {{ user.username }}!</strong>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+/* страница входа/регистрации */
+
+.log_page { background-color: #f4f5f8; }
+.log_page .log_logo { display: block; padding: 8px 0; margin: 0 0 30px 0; height: 60px; text-align: center; }
+.log_page .log_logo > img { display: block; width: 240px; padding-top: 44px; margin: 0 auto; }
+.log_wrap { max-width: 480px; margin: 4% auto 0 auto; padding: 20px;}
+.log_logo { order: 1; padding: 8px 0; height: 50px; margin-right: 4%;}
+.log_menu { margin-left: auto; margin-right: auto; width: 40%; }
+.log_menu nav { margin: 0 -15px; }
+.log_menu nav:after { clear: both; display: block; content: ""; }
+.log_menu nav > a { float: left; padding: 20px 15px; text-decoration: none; color: #2c2ec4; }
+.log_menu nav > .active { color: inherit;text-decoration: none;position: relative; }
+.log_menu nav > .active:after {
+	content: "";
+	z-index: 1;
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	margin: -12px 0 0 -12px;
+	border: solid transparent;
+	border-bottom-color: #fff;
+	border-width: 0 12px 12px 12px;
+}
+
+.log_body {
+	background-color: #fff;
+	border-radius: 2px;
+	position: relative;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0, 0.08);
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0, 0.08);
+}
+.log_body .pad { padding: 13%; }
+.log_body .pad_tfa { padding: 5% 3% 3% 3%; }
+
+
+/* группировка инпутов входа/регистрации */
+.form_list { padding: 0; margin: 0; list-style: none; }
+.form_list .form-group { margin-top: -1px; margin-bottom: 0; }
+.form_list .form-group > input { height: 63px; font-size: 18px; padding: 27px 6% 6px 6%; border-radius: 0; }
+.form_list .form-group > select { width:100%; height: 63px; font-size: 18px; padding: 27px 6% 6px 6%; border-radius: 0; }
+.form_list .form-group > pre { width:100%; height: 163px; font-size: 12px; padding: 26px 6% 6px 6%; border-radius: 0;}
+.form_list .form-group:first-child > input { border-radius: 2px 2px 0 0; }
+.form_list .form-group:last-child > input { border-radius: 0 0 2px 2px; }
+.form_list .form-group > input:focus { position: relative; }
+.form_list .form-group > label { position: absolute; z-index: 1; font-size: 13px; text-transform: lowercase; margin: 5px 5% 0 5%; }
+.form-control { -webkit-box-shadow: none !important; box-shadow: none !important; }
+.log_submit { width: 100%; margin-top: 25px; font-size: 18px; height: 63px; padding: 14px 23px; font-weight: normal; }
+
+.form-avatar > .text-muted{ margin: 12px 5% 0 5%;}
+.form-avatar > input{ margin: 0 0;}
+
+.result { text-align: center; margin-top: 20px; }
+
+* {box-sizing: border-box;}
